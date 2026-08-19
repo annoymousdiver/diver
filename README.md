@@ -1,5 +1,5 @@
-# HnS
-This is the anonymous repository that contains source code for the webpage of "Hide-and-Seek in Trajectories: Discovering Failure Signals for VLA Runtime Monitoring".
+# DIVER
+This is the anonymous repository that contains source code for the webpage of DIVER.
 
 
 # Credit and License
