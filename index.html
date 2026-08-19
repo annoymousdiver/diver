@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="DIVER: Decision-Critical Verifier Learning for VLA Test-Time Scaling">
+  <meta name="keywords" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DIVER: Decision-Critical Verifier Learning for VLA Test-Time Scaling</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <!-- <link rel="icon" href="./static/images/favicon.svg"> -->
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+
+<body>
+
+  <nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+    <div class="navbar-menu">
+      <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+        <a class="navbar-item" href="#">
+          <span class="icon">
+            <i class="fas fa-home"></i>
+          </span>
+        </a>
+      </div>
+    </div>
+  </nav>
+
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-2 publication-title">DIVER: Decision-Critical Verifier Learning for VLA Test-Time Scaling</h1>
+            <!-- <h2 class="title is-6 publlication-title">Anonymous Submission 9554 to NeurIPS 2026</h2> -->
+            <div class="is-size-6 publication-authors">
+              <span class="author-block"><a href>Anonymous Authors</a></span>
+            </div>
+
+            <div class="is-size-6 publication-authors">
+              <span class="author-block">Anonymous Affiliation</span>
+              <br>
+            </div>
+
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <span class="link-block">
+                  <a href="https://anonymous.4open790/" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                  </a>
+                </span>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="hero teaser">
+    <div class="container is-max-desktop is-full-width">
+      <div class="columns is-centered">
+        <div class="column is-full">
+          <figure class="image teaser-figure">
+            <img src="./static/images/fig1.png" alt="DIVER teaser image">
+          </figure>
+        </div>
+      </div>
+      <div class="columns is-centered">
+        <h2 class="subtitle has-text-centered">
+            <strong>DIVER identifies decision-critical moments when action selection matters most and focuses verifier learning on them, enabling more effective VLA test-time action selection with minimal overhead.</strong> 
+        </h2>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+
+      <!-- Paper video. -->
+      <!-- <div class="columns is-centered has-text-centered">
+        <div class="column is-full">
+          <h2 class="title is-3">Explainer Video</h2>
+          <div class="publication-video">
+            <iframe width="100%" height="473" src="" title="Video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div> -->
+      <!--/ Paper video. -->
+
+      <!-- Abstract. -->
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified">
+            <p>
+              Scaling robot data and model capacity has improved Vision-Language-Action (VLA) policies, but further progress is constrained by the high cost and limited scalability of robotic data. Verifier-guided test-time scaling offers a complementary path by using additional inference-time computation to select among multiple candidate actions.
+Existing classification-based verifiers are trained from trajectory-level outcomes while weighting all visited states equally. However, candidate selection matters primarily at sparse decision-critical states, where different actions can lead to different outcomes, rather than at the routine states that dominate a trajectory. We therefore propose DIVER, a decision-criticality-weighted verifier that uses the dispersion of candidate action-expert representations as a proxy for decision criticality and reweights verifier training toward these high-impact states.
+Across LIBERO, RoboCasa, and a real Franka Research 3 platform, our decision-weighted verifier achieves state-of-the-art performance with negligible inference overhead.
+            </p>
+          </div>
+        </div>
+      </div>
+      <!--/ Abstract. -->
+
+    </div>
+  </section>
+
+ <section class="hero is-light is-small">
+      <div class="hero-body has-text-centered">
+        <h1 class="title">
+          s
+        </h1>
+      </div>
+    </section>
+  
+    <section class="hero teaser">
+      <div class="container is-max-desktop is-full-width">
+        <div class="columns is-centered">
+          <div class="column is-full">
+            <figure class="image teaser-figure teaser-figure-spaced">
+              <img src="static/images/fig2.png" alt="DIVER framework overview" />
+            </figure>
+          </div>
+        </div>
+      </div>
+    </section>
+  
+    <section class="section">
+        <div class="container is-max-desktop">
+          <div class="columns is-centered">
+            <div class="column is-full-width">
+              <div class="content has-text-justified">
+                <p>
+                  We propose <strong>DIVER</strong>, a decision-criticality-weighted verifier for VLA test-time scaling.
+                </p>
+                <ul>
+                  <li>
+                    <strong>Identify where decisions matter.</strong>
+                    We estimate decision criticality from the variance of sampled action representations, without additional rollouts or step-level supervision.
+                  </li>
+                  <li>
+                    <strong>Focus verifier learning on critical states.</strong>
+                    DIVER places greater training emphasis on sparse states where candidate actions diverge and selection is more consequential.
+                  </li>
+                  <li>
+                    <strong>Improve test-time action selection efficiently.</strong>
+                    DIVER consistently improves Best-of-N VLA performance across simulated and real-world manipulation tasks with negligible verification overhead.
+                  </li>
+                </ul>
+              </div>
+              <br />
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+  <section class="hero is-light is-small">
+    <div class="hero-body has-text-centered">
+      <h1 class="title"">
+        Quantitative Results
+      </h1>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column is-full-width">
+          <div class="content has-text-justified">
+            <p>
+              We evaluate <strong>DIVER</strong> on two simulated manipulation environments,
+              <strong>LIBERO-Long</strong> and <strong>RoboCasa</strong>, as well as a
+              real-world <strong>Franka Research 3</strong> robot, using both
+              <strong>π<sub>0</sub></strong> and <strong>π<sub>0.5</sub></strong>.
+              Across these settings, DiVeR consistently improves verifier-guided
+              Best-of-N action selection over competitive baselines. We further study
+              candidate scaling, component ablations, unseen-task generalization,
+              qualitative action selection, and inference latency, showing that the
+              gains remain robust while verifier overhead is negligible.
+            </p>
+          </div>
+
+          <div class="content has-text-justified">
+            <!-- <h3 class="is-3">LIBERO-10 with OpenVLA and &pi;<sub>0</sub></h3></h3> -->
+            <!-- <p>
+              [Result 1 description.]
+            </p> -->
+            <img src="./static/images/main1.png" />
+          </div>
+
+          <div class="content has-text-justified">
+            <!-- <h3 class="is-3">[Result 2 heading]</h3>
+            <p>
+              [Result 2 description.]
+            </p> -->
+            <img src="./static/images/main2.png" />
+          </div>
+          <div class="content has-text-justified">
+            <!-- <h3 class="is-3">[Result 2 heading]</h3>
+            <p>
+              [Result 2 description.]
+            </p> -->
+            <img src="./static/images/main3.png" />
+          </div>
+<!-- 
+          <div class="content has-text-justified">
+            <h3 class="is-3">Detection Accuracy&ndash;Timeliness Trade-off</h3>
+            <p>
+              A reliable failure detector must balance two competing demands: detecting failures accurately and detecting them promptly. On unseen LIBERO-10 tasks, Hide-and-Seek achieves the best accuracy&ndash;timeliness trade-off across both OpenVLA and &pi;<sub>0</sub>, with curves closest to the top-left corner. Notably, our method raises alarms near the GPT-5.2 annotated failure onset (dashed lines), enabling timely intervention&mdash;such as pausing execution or requesting human assistance&mdash;before the policy becomes irrecoverably stuck or causes harm.
+            </p>
+            <img src="./static/images/exp3.png" alt="Accuracy-timeliness trade-off curves" />
+          </div> -->
+        </div>
+      </div>
+
+    </div>
+
+    <!-- <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column">
+          <div class="content">
+            <h3 class="is-3">[Qualitative results heading]</h3>
+            <p>
+              [Qualitative results description.]
+            </p>
+          </div>
+        </div>
+      </div> -->
+<!-- 
+      <div class="columns is-centered">
+        <div class="column content">
+            <video poster="" controls muted loop playsinline autoplay height="100%" width="100%">
+            <source src="static/videos/claude.mp4" type="video/mp4">
+            </video>
+            <p class="has-text-centered"><span class="fail-text">Failure mode 1</span> too chill </p>
+        </div>
+        <div class="column content">
+            <video poster="" controls muted loop playsinline autoplay height="100%" width="100%">
+            <source src="static/videos/callmebaby.mp4" type="video/mp4">
+            </video>
+            <p class="has-text-centered"><span class="fail-text">Failure mode 2</span> too handsome </p>
+        </div>
+      </div>
+
+      <div class="columns is-centered">
+        <div class="column content">
+            <video poster="" controls muted loop playsinline autoplay height="100%" width="100%">
+            <source src="static/videos/golden.mp4" type="video/mp4">
+            </video>
+            <p class="has-text-centered"><span class="fail-text">Failure mode 3</span> too addictive </p>
+        </div>
+        <div class="column content">
+            <video poster="" controls muted loop playsinline autoplay height="100%" width="100%">
+            <source src="static/videos/humoresque.mp4" type="video/mp4">
+            </video>
+            <p class="has-text-centered"><span class="fail-text">Failure mode 4</span>: too elegant</p>
+        </div>
+      </div>
+
+    </div> -->
+
+    <section class="hero is-light is-small">
+      <div class="hero-body has-text-centered">
+        <h1 class="title">
+          Qualitative Results
+        </h1>
+      </div>
+    </section>
+    <br>
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column">
+          <div class="content">
+            <!-- <h3 class="is-3">[Qualitative results 2 heading]</h3> -->
+            <p>
+              H
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="columns is-centered">
+        <div class="column content">
+            <video poster="" controls muted loop playsinline autoplay height="100%" width="100%">
+            <source src="./static/videos/drawer_f.mp4" type="video/mp4">
+            </video>
+            <p class="has-text-centered"><span class="succ-text">Base</span>: Fail</p>
+        </div>
+        <div class="column content">
+            <video poster="" controls muted loop playsinline autoplay height="100%" width="100%">
+            <source src="./static/videos/drawer_s.mp4" type="video/mp4">
+            </video>
+            <p class="has-text-centered"><span class="fail-text">Ours</span>: Success</p>
+        </div>
+      </div>
+
+      <div class="columns is-centered">
+        <div class="column content">
+            <video poster="" controls muted loop playsinline autoplay height="100%" width="100%">
+            <source src="./static/videos/cup_f.mp4" type="video/mp4">
+            </video>
+            <p class="has-text-centered"><span class="succ-text">Base</span>: Fail</p>
+        </div>
+        <div class="column content">
+            <video poster="" controls muted loop playsinline autoplay height="100%" width="100%">
+            <source src="./static/videos/cup_s.mp4" type="video/mp4">
+            </video>
+            <p class="has-text-centered"><span class="fail-text">Ours</span>: Success</p>
+        </div>
+      </div>
+      
+      <div class="columns is-centered">
+        <div class="column content">
+            <video poster="" controls muted loop playsinline autoplay height="100%" width="100%">
+            <source src="./static/videos/stack_f.mp4" type="video/mp4">
+            </video>
+            <p class="has-text-centered"><span class="succ-text">Base</span>: Fail</p>
+        </div>
+        <div class="column content">
+            <video poster="" controls muted loop playsinline autoplay height="100%" width="100%">
+            <source src="./static/videos/stack_s.mp4" type="video/mp4">
+            </video>
+            <p class="has-text-centered"><span class="fail-text">Ours</span>: Success </p>
+        </div>
+      </div>
+
+    </div>
+<!-- 
+    <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column content">
+          <video poster="" controls muted loop playsinline autoplay height="100%" width="100%">
+          <source src="static/videos/OpenVLA/task7_success.mp4" type="video/mp4">
+          </video>
+          <p class="has-text-centered"><span class="succ-text">Success</span></p>
+      </div>
+      <div class="column content">
+          <video poster="" controls muted loop playsinline autoplay height="100%" width="100%">
+          <source src="static/videos/OpenVLA/task7_fail.mp4" type="video/mp4">
+          </video>
+          <p class="has-text-centered"><span class="fail-text">Failure</span>: Robot fails to grasp the alphabet soup and stops moving.</p>
+      </div>
+    </div> -->
+<!-- 
+    <div class="columns is-centered">
+      <div class="column content">
+          <video poster="" controls muted loop playsinline autoplay height="100%" width="100%">
+          <source src="static/videos/OpenVLA/task9_success.mp4" type="video/mp4">
+          </video>
+          <p class="has-text-centered"><span class="succ-text">Success</span></p>
+      </div>
+      <div class="column content">
+          <video poster="" controls muted loop playsinline autoplay height="100%" width="100%">
+          <source src="static/videos/OpenVLA/task9_fail.mp4" type="video/mp4">
+          </video>
+          <p class="has-text-centered"><span class="fail-text">Failure</span>: Robot gets stuck after placing the mug, then drifts away without closing the microwave.</p>
+      </div>
+    </div> -->
+  </div>
+
+  </section>
+
+
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      <pre><code>[BibTeX will be added after the review period.]</code></pre>
+    </div>
+  </section>
+
+
+  <footer class="footer">
+    <div class="container">
+      <div class="content has-text-centered">
+        <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
+          <img alt="Creative Commons License" style="border-width:0"
+            src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" />
+        </a>
+      </div>
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content">
+            <p>
+              This website is licensed under a <a rel="license"
+                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0
+                International License</a>, and adapted from <a href="https://github.com/vla-safe/vla-safe.github.io">SAFE website template</a> which is originated from <a href="https://github.com/nerfies/nerfies.github.io">Nerfies website template</a>.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+
+</html>
