@@ -3,10 +3,10 @@
 
 <head>
   <meta charset="utf-8">
-  <meta name="description" content="DIVER: Decision-Critical Verifier Learning for VLA Test-Time Scaling">
+  <meta name="description" content="DiVeR: Decision-Critical Verifier Learning for VLA Test-Time Scaling">
   <meta name="keywords" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>DIVER: Decision-Critical Verifier Learning for VLA Test-Time Scaling</title>
+  <title>DiVeR: Decision-Critical Verifier Learning for VLA Test-Time Scaling</title>
 
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
 
@@ -52,7 +52,7 @@
       <div class="container is-max-desktop">
         <div class="columns is-centered">
           <div class="column has-text-centered">
-            <h1 class="title is-2 publication-title">DIVER: Decision-Critical Verifier Learning for VLA Test-Time Scaling</h1>
+            <h1 class="title is-2 publication-title">DiVeR: Decision-Critical Verifier Learning for VLA Test-Time Scaling</h1>
             <!-- <h2 class="title is-6 publlication-title">Anonymous Submission 9554 to NeurIPS 2026</h2> -->
             <div class="is-size-6 publication-authors">
               <span class="author-block"><a href>Anonymous Authors</a></span>
@@ -87,13 +87,13 @@
       <div class="columns is-centered">
         <div class="column is-full">
           <figure class="image teaser-figure">
-            <img src="./static/images/fig1.png" alt="DIVER teaser image">
+            <img src="./static/images/fig1.png" alt="DiVeR teaser image">
           </figure>
         </div>
       </div>
       <div class="columns is-centered">
         <h2 class="subtitle has-text-centered">
-            <strong>DIVER identifies decision-critical moments when action selection matters most and focuses verifier learning on them, enabling more effective VLA test-time action selection with minimal overhead.</strong> 
+            <strong>DiVeR identifies decision-critical moments when action selection matters most and focuses verifier learning on them, enabling more effective VLA test-time action selection with minimal overhead.</strong> 
         </h2>
       </div>
     </div>
@@ -120,7 +120,7 @@
           <div class="content has-text-justified">
             <p>
               Scaling robot data and model capacity has improved Vision-Language-Action (VLA) policies, but further progress is constrained by the high cost and limited scalability of robotic data. Verifier-guided test-time scaling offers a complementary path by using additional inference-time computation to select among multiple candidate actions.
-Existing classification-based verifiers are trained from trajectory-level outcomes while weighting all visited states equally. However, candidate selection matters primarily at sparse decision-critical states, where different actions can lead to different outcomes, rather than at the routine states that dominate a trajectory. We therefore propose DIVER, a decision-criticality-weighted verifier that uses the dispersion of candidate action-expert representations as a proxy for decision criticality and reweights verifier training toward these high-impact states.
+Existing classification-based verifiers are trained from trajectory-level outcomes while weighting all visited states equally. However, candidate selection matters primarily at sparse decision-critical states, where different actions can lead to different outcomes, rather than at the routine states that dominate a trajectory. We therefore propose DiVeR, a decision-criticality-weighted verifier that uses the dispersion of candidate action-expert representations as a proxy for decision criticality and reweights verifier training toward these high-impact states.
 Across LIBERO, RoboCasa, and a real Franka Research 3 platform, our decision-weighted verifier achieves state-of-the-art performance with negligible inference overhead.
             </p>
           </div>
@@ -134,7 +134,7 @@ Across LIBERO, RoboCasa, and a real Franka Research 3 platform, our decision-wei
  <section class="hero is-light is-small">
       <div class="hero-body has-text-centered">
         <h1 class="title">
-          s
+          Method Overview
         </h1>
       </div>
     </section>
@@ -144,7 +144,7 @@ Across LIBERO, RoboCasa, and a real Franka Research 3 platform, our decision-wei
         <div class="columns is-centered">
           <div class="column is-full">
             <figure class="image teaser-figure teaser-figure-spaced">
-              <img src="static/images/fig2.png" alt="DIVER framework overview" />
+              <img src="static/images/fig2.png" alt="DiVeR framework overview" />
             </figure>
           </div>
         </div>
@@ -157,7 +157,7 @@ Across LIBERO, RoboCasa, and a real Franka Research 3 platform, our decision-wei
             <div class="column is-full-width">
               <div class="content has-text-justified">
                 <p>
-                  We propose <strong>DIVER</strong>, a decision-criticality-weighted verifier for VLA test-time scaling.
+                  We propose <strong>DiVeR</strong>, a decision-criticality-weighted verifier for VLA test-time scaling.
                 </p>
                 <ul>
                   <li>
@@ -166,11 +166,11 @@ Across LIBERO, RoboCasa, and a real Franka Research 3 platform, our decision-wei
                   </li>
                   <li>
                     <strong>Focus verifier learning on critical states.</strong>
-                    DIVER places greater training emphasis on sparse states where candidate actions diverge and selection is more consequential.
+                    DiVeR places greater training emphasis on sparse states where candidate actions DiVeRge and selection is more consequential.
                   </li>
                   <li>
                     <strong>Improve test-time action selection efficiently.</strong>
-                    DIVER consistently improves Best-of-N VLA performance across simulated and real-world manipulation tasks with negligible verification overhead.
+                    DiVeR consistently improves Best-of-N VLA performance across simulated and real-world manipulation tasks with negligible verification overhead.
                   </li>
                 </ul>
               </div>
@@ -195,7 +195,7 @@ Across LIBERO, RoboCasa, and a real Franka Research 3 platform, our decision-wei
         <div class="column is-full-width">
           <div class="content has-text-justified">
             <p>
-              We evaluate <strong>DIVER</strong> on two simulated manipulation environments,
+              We evaluate <strong>DiVeR</strong> on two simulated manipulation environments,
               <strong>LIBERO-Long</strong> and <strong>RoboCasa</strong>, as well as a
               real-world <strong>Franka Research 3</strong> robot, using both
               <strong>π<sub>0</sub></strong> and <strong>π<sub>0.5</sub></strong>.
@@ -301,10 +301,10 @@ Across LIBERO, RoboCasa, and a real Franka Research 3 platform, our decision-wei
             <!-- <h3 class="is-3">[Qualitative results 2 heading]</h3> -->
             <p>
               <p>
-                We qualitatively compare the base VLA policy with <strong>DIVER</strong> on a
+                We qualitatively compare the base VLA policy with <strong>DiVeR</strong> on a
                 <strong>Franka Research 3</strong> robot.
                 Starting from the same initial state, the base policy can produce imprecise
-                grasping or placement behaviors that lead to failure, while DIVER selects
+                grasping or placement behaviors that lead to failure, while DiVeR selects
                 more appropriate actions and successfully completes the task.
               </p>
             </p>
@@ -313,11 +313,16 @@ Across LIBERO, RoboCasa, and a real Franka Research 3 platform, our decision-wei
       </div>
 
       <div class="columns is-centered">
+        <div class="column is-full">
+          <h3 class="title is-5 has-text-centered">Close the drawer</h3>
+        </div>
+      </div>
+      <div class="columns is-centered">
         <div class="column content">
             <video poster="" controls muted loop playsinline autoplay height="100%" width="100%">
             <source src="./static/videos/drawer_f_h264.mp4" type="video/mp4">
             </video>
-            <p class="has-text-centered"><span class="fail-text">Base</span>: Fail</p>
+            <p class="has-text-centered"><span class="fail-text">Base</span>: Failed — the gripper moves slightly above the drawer front, failing to close the drawer.</p>
         </div>
         <div class="column content">
             <video poster="" controls muted loop playsinline autoplay height="100%" width="100%">
@@ -328,11 +333,16 @@ Across LIBERO, RoboCasa, and a real Franka Research 3 platform, our decision-wei
       </div>
 
       <div class="columns is-centered">
+        <div class="column is-full">
+          <h3 class="title is-5 has-text-centered">Place the cup on the plate</h3>
+        </div>
+      </div>
+      <div class="columns is-centered">
         <div class="column content">
             <video poster="" controls muted loop playsinline autoplay height="100%" width="100%">
             <source src="./static/videos/cup_f_h264.mp4" type="video/mp4">
             </video>
-            <p class="has-text-centered"><span class="fail-text">Base</span>: Fail</p>
+            <p class="has-text-centered"><span class="fail-text">Base</span>: Failed — the gripper attempts to grasp the edge of the cup, causing it to slip and resulting in a failed grasp.</p>
         </div>
         <div class="column content">
             <video poster="" controls muted loop playsinline autoplay height="100%" width="100%">
@@ -341,13 +351,38 @@ Across LIBERO, RoboCasa, and a real Franka Research 3 platform, our decision-wei
             <p class="has-text-centered"><span class="succ-text">Ours</span>: Success</p>
         </div>
       </div>
+
+      <div class="columns is-centered">
+        <div class="column is-full">
+          <h3 class="title is-5 has-text-centered">Place the green block in the bowl</h3>
+        </div>
+      </div>
+      <div class="columns is-centered">
+        <div class="column content">
+            <video poster="" controls muted loop playsinline autoplay height="100%" width="100%">
+            <source src="./static/videos/green_f_h264.mp4" type="video/mp4">
+            </video>
+            <p class="has-text-centered"><span class="fail-text">Base</span>: Failed — the gripper attempts to grasp the edge of the block, causing it to slip and resulting in a failed grasp.</p>
+        </div>
+        <div class="column content">
+            <video poster="" controls muted loop playsinline autoplay height="100%" width="100%">
+            <source src="./static/videos/green_s_h264.mp4" type="video/mp4">
+            </video>
+            <p class="has-text-centered"><span class="succ-text">Ours</span>: Success</p>
+        </div>
+      </div>    
       
+      <div class="columns is-centered">
+        <div class="column is-full">
+          <h3 class="title is-5 has-text-centered">Stack the red block on the blue block </h3>
+        </div>
+      </div>
       <div class="columns is-centered">
         <div class="column content">
             <video poster="" controls muted loop playsinline autoplay height="100%" width="100%">
             <source src="./static/videos/stack_f_h264.mp4" type="video/mp4">
             </video>
-            <p class="has-text-centered"><span class="fail-text">Base</span>: Fail</p>
+            <p class="has-text-centered"><span class="fail-text">Base</span>: Failed — the red block is placed near the edge of the blue block and falls off.</p>
         </div>
         <div class="column content">
             <video poster="" controls muted loop playsinline autoplay height="100%" width="100%">
