@@ -26,7 +26,9 @@ $(document).ready(function () {
     // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
     $(".navbar-burger").toggleClass("is-active");
     $(".navbar-menu").toggleClass("is-active");
-
+    $('video').each(function () {
+  this.playbackRate = 2.0;
+});
   });
 
   var options = {
