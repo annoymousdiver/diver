@@ -459,26 +459,6 @@ Across LIBERO, RoboCasa, and a real Franka Research 3 platform, our decision-wei
     </div>
   </footer>
 
-  <script>
-    const playbackRate = 2;
-
-    function enforcePlaybackRate(video) {
-      video.defaultPlaybackRate = playbackRate;
-      video.playbackRate = playbackRate;
-    }
-
-    document.querySelectorAll('video').forEach((video) => {
-      enforcePlaybackRate(video);
-      video.addEventListener('loadedmetadata', () => enforcePlaybackRate(video));
-      video.addEventListener('play', () => enforcePlaybackRate(video));
-      video.addEventListener('ratechange', () => {
-        if (video.playbackRate !== playbackRate) {
-          enforcePlaybackRate(video);
-        }
-      });
-    });
-  </script>
-
 </body>
 
 </html>
