@@ -320,19 +320,19 @@ Across LIBERO, RoboCasa, and a real Franka Research 3 platform, our decision-wei
       <div class="columns is-centered">
         <div class="column content">
             <video poster="" controls muted loop playsinline autoplay height="100%" width="100%">
-            <source src="./static/videos/drawer_f_h264.mp4" type="video/mp4">
+            <source src="./static/videos/drawer_f.mp4" type="video/mp4">
             </video>
             <p class="has-text-centered"><span class="fail-text">Base</span>: Failed — the gripper moves slightly above the drawer front, failing to close the drawer.</p>
         </div>
         <div class="column content">
             <video poster="" controls muted loop playsinline autoplay height="100%" width="100%">
-            <source src="./static/videos/drawer_s_h264.mp4" type="video/mp4">
+            <source src="./static/videos/drawer_s.mp4" type="video/mp4">
             </video>
             <p class="has-text-centered"><span class="succ-text">Ours</span>: Success</p>
         </div>
       </div>
 
-      <div class="columns is-centered">
+      <!-- <div class="columns is-centered">
         <div class="column is-full">
           <h3 class="title is-5 has-text-centered">Place the cup on the plate</h3>
         </div>
@@ -346,13 +346,13 @@ Across LIBERO, RoboCasa, and a real Franka Research 3 platform, our decision-wei
         </div>
         <div class="column content">
             <video poster="" controls muted loop playsinline autoplay height="100%" width="100%">
-            <source src="./static/videos/cup_s_h264.mp4" type="video/mp4">
+            <source src="./static/videos/cup_s.mp4" type="video/mp4">
             </video>
             <p class="has-text-centered"><span class="succ-text">Ours</span>: Success</p>
         </div>
-      </div>
+      </div> -->
 
-      <div class="columns is-centered">
+      <!-- <div class="columns is-centered">
         <div class="column is-full">
           <h3 class="title is-5 has-text-centered">Place the green block in the bowl</h3>
         </div>
@@ -370,7 +370,7 @@ Across LIBERO, RoboCasa, and a real Franka Research 3 platform, our decision-wei
             </video>
             <p class="has-text-centered"><span class="succ-text">Ours</span>: Success</p>
         </div>
-      </div>    
+      </div>     -->
       
       <div class="columns is-centered">
         <div class="column is-full">
@@ -380,13 +380,13 @@ Across LIBERO, RoboCasa, and a real Franka Research 3 platform, our decision-wei
       <div class="columns is-centered">
         <div class="column content">
             <video poster="" controls muted loop playsinline autoplay height="100%" width="100%">
-            <source src="./static/videos/stack_f_h264.mp4" type="video/mp4">
+            <source src="./static/videos/stack_f.mp4" type="video/mp4">
             </video>
             <p class="has-text-centered"><span class="fail-text">Base</span>: Failed — the red block is placed near the edge of the blue block and falls off.</p>
         </div>
         <div class="column content">
             <video poster="" controls muted loop playsinline autoplay height="100%" width="100%">
-            <source src="./static/videos/stack_s_h264.mp4" type="video/mp4">
+            <source src="./static/videos/stack_s.mp4" type="video/mp4">
             </video>
             <p class="has-text-centered"><span class="succ-text">Ours</span>: Success </p>
         </div>
@@ -458,6 +458,26 @@ Across LIBERO, RoboCasa, and a real Franka Research 3 platform, our decision-wei
       </div>
     </div>
   </footer>
+
+  <script>
+    const playbackRate = 2;
+
+    function enforcePlaybackRate(video) {
+      video.defaultPlaybackRate = playbackRate;
+      video.playbackRate = playbackRate;
+    }
+
+    document.querySelectorAll('video').forEach((video) => {
+      enforcePlaybackRate(video);
+      video.addEventListener('loadedmetadata', () => enforcePlaybackRate(video));
+      video.addEventListener('play', () => enforcePlaybackRate(video));
+      video.addEventListener('ratechange', () => {
+        if (video.playbackRate !== playbackRate) {
+          enforcePlaybackRate(video);
+        }
+      });
+    });
+  </script>
 
 </body>
 
