@@ -119,9 +119,13 @@
           <h2 class="title is-3">Abstract</h2>
           <div class="content has-text-justified">
             <p>
-              Scaling robot data and model capacity has improved Vision-Language-Action (VLA) policies, but further progress is constrained by the high cost and limited scalability of robotic data. Verifier-guided test-time scaling offers a complementary path by using additional inference-time computation to select among multiple candidate actions.
-Existing classification-based verifiers are trained from trajectory-level outcomes while weighting all visited states equally. However, candidate selection matters primarily at sparse decision-critical states, where different actions can lead to different outcomes, rather than at the routine states that dominate a trajectory. We therefore propose DiVeR, a decision-criticality-weighted verifier that uses the dispersion of candidate action-expert representations as a proxy for decision criticality and reweights verifier training toward these high-impact states.
-Across LIBERO, RoboCasa, and a real Franka Research 3 platform, our decision-weighted verifier achieves state-of-the-art performance with negligible inference overhead.
+              Scaling robot data and model capacity has improved Vision-Language-Action (VLA) policies, but further progress is constrained by the high cost of robotic data.
+              Verifier-guided test-time scaling offers an efficient alternative by sampling multiple action candidates and selecting the one most likely to lead to task success at inference time.
+              Existing classification-based verifiers learn from trajectory-level outcomes but treat all visited states equally.
+              However, many states provide limited discrimination signal because plausible actions are similar, while a sparse set of decision-critical states admit meaningfully different actions that can substantially affect downstream outcomes.
+              We therefore propose DiVeR, a decision-criticality-weighted verifier that estimates state importance from the dispersion of sampled action representations.
+              Using this signal,  DiVeR places greater emphasis on decision-critical states during training, focusing verifier learning where action selection matters most.
+              Across LIBERO, RoboCasa, and real-world experiments on a Franka Research 3 robot,  DiVeR consistently improves verifier-guided action selection with negligible inference overhead.
             </p>
           </div>
         </div>
