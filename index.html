@@ -119,13 +119,13 @@
           <h2 class="title is-3">Abstract</h2>
           <div class="content has-text-justified">
             <p>
-              Scaling robot data and model capacity has improved Vision-Language-Action (VLA) policies, but further progress is constrained by the high cost of robotic data.
-              Verifier-guided test-time scaling offers an efficient alternative by sampling multiple action candidates and selecting the one most likely to lead to task success at inference time.
-              Existing classification-based verifiers learn from trajectory-level outcomes but treat all visited states equally.
-              However, many states provide limited discrimination signal because plausible actions are similar, while a sparse set of decision-critical states admit meaningfully different actions that can substantially affect downstream outcomes.
-              We therefore propose DiVeR, a decision-criticality-weighted verifier that estimates state importance from the dispersion of sampled action representations.
-              Using this signal,  DiVeR places greater emphasis on decision-critical states during training, focusing verifier learning where action selection matters most.
-              Across LIBERO, RoboCasa, and real-world experiments on a Franka Research 3 robot,  DiVeR consistently improves verifier-guided action selection with negligible inference overhead.
+             Scaling robot data and model capacity has improved Vision-Language-Action (VLA) policies, but further progress is constrained by the high cost of robotic data.
+Verifier-guided test-time scaling offers an efficient alternative by sampling multiple action candidates and selecting the one most likely to lead to task success at inference time.
+Existing classification-based verifiers learn from trajectory-level outcomes but treat all visited states equally, even though their value for candidate discrimination can vary across a trajectory.
+At many states, plausible actions are similar and provide limited discrimination signal, while only a sparse set of decision-critical states admits meaningfully different actions that can substantially affect downstream outcomes.
+To address this, we propose DiVeR, which estimates decision criticality from the dispersion of sampled action representations.
+DiVeR then uses this signal to reweight verifier learning toward states where action selection is most consequential, without requiring step-level annotations or additional environment interaction.
+Across LIBERO, RoboCasa, and real-world experiments on a Franka Research 3 robot, DiVeR consistently improves task success through more effective verifier-guided action selection, while adding negligible verifier inference overhead.
             </p>
           </div>
         </div>
@@ -170,7 +170,7 @@
                   </li>
                   <li>
                     <strong>Focus verifier learning on critical states.</strong>
-                    DiVeR places greater training emphasis on sparse states where candidate actions DiVeRge and selection is more consequential.
+                    DiVeR places greater training emphasis on sparse states where candidate actions diverge and selection is more consequential.
                   </li>
                   <li>
                     <strong>Improve test-time action selection efficiently.</strong>
@@ -216,15 +216,7 @@
             <!-- <p>
               [Result 1 description.]
             </p> -->
-            <img src="./static/images/main1.png" />
-          </div>
-
-          <div class="content has-text-justified">
-            <!-- <h3 class="is-3">[Result 2 heading]</h3>
-            <p>
-              [Result 2 description.]
-            </p> -->
-            <img src="./static/images/main2.png" />
+            <img src="./static/images/main12.png" />
           </div>
           <div class="content has-text-justified">
             <!-- <h3 class="is-3">[Result 2 heading]</h3>
@@ -289,6 +281,55 @@
       </div>
 
     </div> -->
+
+      <section class="hero is-light is-small">
+    <div class="hero-body has-text-centered">
+      <h1 class="title"">
+         Qualitative Results
+      </h1>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column is-full-width">
+          <div class="content has-text-justified">
+            <p>
+              We evaluate <strong>DiVeR</strong> on two simulated manipulation environments,
+              <strong>LIBERO-Long</strong> and <strong>RoboCasa</strong>, as well as a
+              real-world <strong>Franka Research 3</strong> robot, using both
+              <strong>π<sub>0</sub></strong> and <strong>π<sub>0.5</sub></strong>.
+              Across these settings, DiVeR consistently improves verifier-guided
+              Best-of-N action selection over competitive baselines. We further study
+              candidate scaling, component ablations, unseen-task generalization,
+              qualitative action selection, and inference latency, showing that the
+              gains remain robust while verifier overhead is negligible.
+            </p>
+          </div>
+
+          <div class="content has-text-justified">
+            <!-- <h3 class="is-3">LIBERO-10 with OpenVLA and &pi;<sub>0</sub></h3></h3> -->
+            <!-- <p>
+              [Result 1 description.]
+            </p> -->
+            <img src="./static/images/main12.png" />
+          </div>
+
+<!-- 
+          <div class="content has-text-justified">
+            <h3 class="is-3">Detection Accuracy&ndash;Timeliness Trade-off</h3>
+            <p>
+              A reliable failure detector must balance two competing demands: detecting failures accurately and detecting them promptly. On unseen LIBERO-10 tasks, Hide-and-Seek achieves the best accuracy&ndash;timeliness trade-off across both OpenVLA and &pi;<sub>0</sub>, with curves closest to the top-left corner. Notably, our method raises alarms near the GPT-5.2 annotated failure onset (dashed lines), enabling timely intervention&mdash;such as pausing execution or requesting human assistance&mdash;before the policy becomes irrecoverably stuck or causes harm.
+            </p>
+            <img src="./static/images/exp3.png" alt="Accuracy-timeliness trade-off curves" />
+          </div> -->
+        </div>
+      </div>
+
+    </div>
+
+
 
     <section class="hero is-light is-small">
       <div class="hero-body has-text-centered">
